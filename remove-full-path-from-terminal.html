@@ -1,80 +1,140 @@
-<!DOCTYPE html>
-<html lang="en">
+<!doctype html>
+<html lang="en" itemscope itemtype="http://schema.org/Person">
 <head>
-        <meta charset="utf-8" />
-        <title>Remove Full Path From Terminal</title>
-        <link rel="stylesheet" href="https://jasonfigueroa.github.io/theme/css/main.css" />
-        <link href="https://jasonfigueroa.github.io/feeds/all.atom.xml" type="application/atom+xml" rel="alternate" title="Jason Figueroa Atom Feed" />
+  <meta charset="utf-8">
+  <!-- Site Meta Data -->
+  <title>Remove Full Path From Terminal</title>
+  <meta name="viewport" content="width=device-width, initial-scale=1">
+  <meta name="description" content="">
+  <meta name="author" content="Jason Figueroa">
 
-        <!--[if IE]>
-            <script src="https://html5shiv.googlecode.com/svn/trunk/html5.js"></script>
-        <![endif]-->
+  <link rel="shortcut icon" href="https://jasonfigueroa.github.io/images/favicon.ico">
+
+  <!-- schema.org -->
+  <meta itemprop="name" content="Jason Figueroa">
+  <meta itemprop="image" content="">
+  <meta itemprop="description" content="">
+
+  <link href='https://fonts.googleapis.com/css?family=Open+Sans:400,600,700' rel='stylesheet' type='text/css'>
+  <!-- Style Meta Data -->
+  <link rel="stylesheet" href="https://jasonfigueroa.github.io/theme/css/style.css" type="text/css" />
+  <link rel="stylesheet" href="https://jasonfigueroa.github.io/theme/css/pygments.css" type="text/css" />
+
+  <!-- Feed Meta Data -->
+
+  <!-- Twitter Feed -->
+  <meta name="twitter:card" content="summary">
+  <meta name="twitter:site" content="">
+  <meta name="twitter:image" content="">
+
+<meta name="twitter:creator" content="">
+<meta name="twitter:url" content="https://jasonfigueroa.github.io/remove-full-path-from-terminal.html">
+<meta name="twitter:title" content="Jason Figueroa ~ Remove Full Path From Terminal">
+<meta name="twitter:description" content="Here is a link from stackoverflow describing how to reduce the prompt in the terminal from displaying the entire current working directory to just displaying the current directory. The snippet can be found here.">
+
+<!-- Facebook Meta Data -->
+<meta property="og:title" content="Jason Figueroa ~ Remove Full Path From Terminal" />
+<meta property="og:description" content="Here is a link from stackoverflow describing how to reduce the prompt in the terminal from displaying the entire current working directory to just displaying the current directory. The snippet can be found here." />
+<meta property="og:image" content="" />
 </head>
 
-<body id="index" class="home">
-        <header id="banner" class="body">
-                <h1><a href="https://jasonfigueroa.github.io/">Jason Figueroa </a></h1>
-                <nav><ul>
-                    <li><a href="https://jasonfigueroa.github.io/pages/about-me.html">About Me</a></li>
-                    <li><a href="https://jasonfigueroa.github.io/pages/about-site.html">About This Site</a></li>
-                    <li class="active"><a href="https://jasonfigueroa.github.io/category/bash.html">bash</a></li>
-                    <li><a href="https://jasonfigueroa.github.io/category/c-programming.html">c programming</a></li>
-                </ul></nav>
-        </header><!-- /#banner -->
-<section id="content" class="body">
+<body>
+  <!-- Sidebar -->
+  <aside>
+    <!--<center><a href="https://jasonfigueroa.github.io"><img id="avatar" src=""></a></center>-->
+    <h1>Jason Figueroa</h1>
+      <p>Passionate Learner</p>
+    
+    <!-- removed the following on 3/29/2017 -->
+    <!-- <br> -->
+
+
+    <nav class="nav">
+      <ul class="list-bare">
+      
+          <li><a class="nav__link" href="https://jasonfigueroa.github.io">Blog</a></li>
+          <li><a class="nav__link" href="https://jasonfigueroa.github.io/pages/about-me.html">About Me</a></li>
+          <li><a class="nav__link" href="https://jasonfigueroa.github.io/pages/about-site.html">About This Site</a></li>
+         
+        
+      </ul>
+    </nav>
+
+    <p class="social">
+        <a href="https://twitter.com/jasonfigueroa_" target="_blank" ><img src="https://jasonfigueroa.github.io/theme/images/icons/twitter.png"></a>
+        <a href="https://github.com/jasonfigueroa" target="_blank" ><img src="https://jasonfigueroa.github.io/theme/images/icons/github.png"></a>
+        <a href="https://www.linkedin.com/in/jason-figueroa-b59a3798/" target="_blank" ><img src="https://jasonfigueroa.github.io/theme/images/icons/linkedin.png"></a>
+    </p>
+
+    <h2>Categories</h2>
+    <ul class="navbar">
+      <li class="active"><a href="https://jasonfigueroa.github.io/category/bash.html">bash</a></li>
+      <li><a href="https://jasonfigueroa.github.io/category/c-programming.html">c programming</a></li>
+    </ul> 
+
+
+  </aside>
+
+  <!-- Content -->
   <article>
-    <header>
-      <h1 class="entry-title">
-        <a href="https://jasonfigueroa.github.io/remove-full-path-from-terminal.html" rel="bookmark"
-           title="Permalink to Remove Full Path From Terminal">Remove Full Path From Terminal</a></h1>
-    </header>
-
-    <div class="entry-content">
-<footer class="post-info">
-        <abbr class="published" title="2017-03-08T08:43:00-06:00">
-                Published: Wed 08 March 2017
-        </abbr>
-
-        <address class="vcard author">
-                By                         <a class="url fn" href="https://jasonfigueroa.github.io/author/jason-figueroa.html">Jason Figueroa</a>
-        </address>
-<p>In <a href="https://jasonfigueroa.github.io/category/bash.html">bash</a>.</p>
-<p>tags: <a href="https://jasonfigueroa.github.io/tag/bash.html">bash</a> </p>
-</footer><!-- /.post-info -->      <p>Here is a <a href="http://askubuntu.com/questions/232086/remove-full-path-from-terminal" target="_blank">link</a> from stackoverflow describing how to reduce the prompt in the terminal from displaying the entire current working directory to just displaying the current directory.</p>
+<section id="content">
+    <article>
+        <h2 class="post_title post_detail"><a href="https://jasonfigueroa.github.io/remove-full-path-from-terminal.html" rel="bookmark" title="Permalink to Remove Full Path From Terminal">Remove Full Path From Terminal</a></h2>
+        <div class="entry-content blog-post">
+            <p>Here is a <a href="http://askubuntu.com/questions/232086/remove-full-path-from-terminal" target="_blank">link</a> from stackoverflow describing how to reduce the prompt in the terminal from displaying the entire current working directory to just displaying the current directory.</p>
 <p><img alt="screenshot of terminal" src="images/bash-01-a.png"></p>
 <p>The snippet can be found <a href="https://github.com/jasonfigueroa/snippets/blob/master/bash/bashrc-snippet.sh" target="_blank">here</a>.</p>
-    </div><!-- /.entry-content -->
+        </div>
+        <div class="post_list">
+            <span>By </span>
+            <a href="https://jasonfigueroa.github.io/author/jason-figueroa.html">@Jason Figueroa</a>
+            <span> in </span>
+            <span class="post_category"><a href="https://jasonfigueroa.github.io/category/bash.html" rel="bookmark" title="Permalink to bash">[ bash ]</a></span>
+            <span class="post_date">Wed 08 March 2017</span>
+            <div><span>Tags : </span>
+                <span><a href="https://jasonfigueroa.github.io/tag/bash.html">#bash, </a></span>
+            </div>
 
-  </article>
+            <!-- disabled the following block on 3/29/2017, until I can take a closer look
+            <div class="entry-social">
+                <span class="twitter"><a target="_blank" rel="nofollow" onclick="javascript:window.open(this.href, '', 'menubar=no,toolbar=no,resizable=yes,scrollbars=yes,height=400,width=700');return false;" title="Twitter" href="https://twitter.com/share?url=https://jasonfigueroa.github.io/remove-full-path-from-terminal.html&text=Remove Full Path From Terminal&via="><img src="https://jasonfigueroa.github.io/theme/images/icons/twitter-s.png"></a></span>
+
+                <span class="gplus"><a target="_blank" title="Google +" href="https://plus.google.com/share?url=https://jasonfigueroa.github.io/remove-full-path-from-terminal.html&hl=fr" rel="nofollow" onclick="javascript:window.open(this.href, '', 'menubar=no,toolbar=no,resizable=yes,scrollbars=yes,height=450,width=650');return false;"><img src="https://jasonfigueroa.github.io/theme/images/icons/google-s.png"></a></span>
+
+                <span class="facebook"><a target="_blank" title="Facebook" rel="nofollow" onclick="javascript:window.open(this.href, '', 'menubar=no,toolbar=no,resizable=yes,scrollbars=yes,height=500,width=700');return false;" href="https://www.facebook.com/sharer.php?u=https://jasonfigueroa.github.io/remove-full-path-from-terminal.html&t=Remove Full Path From Terminal"><img src="https://jasonfigueroa.github.io/theme/images/icons/facebook-s.png"></a></span>
+
+                <a  target="_blank" title="Linkedin" href="https://www.linkedin.com/shareArticle?mini=true&url=https://jasonfigueroa.github.io/remove-full-path-from-terminal.html&title=Remove Full Path From Terminal" rel="nofollow" onclick="javascript:window.open(this.href, '', 'menubar=no,toolbar=no,resizable=yes,scrollbars=yes,height=450,width=650');return false;"><img src="https://jasonfigueroa.github.io/theme/images/icons/linkedin-s.png"></a>
+
+                <span class="mail"><a href="mailto:?subject=Remove Full Path From Terminal&amp;body=Viens découvrir un article à propos de [Remove Full Path From Terminal] sur le site de Jason Figueroa. https://jasonfigueroa.github.io/remove-full-path-from-terminal.html" title="Share by Email" target="_blank"><img src="https://jasonfigueroa.github.io/theme/images/icons/mail-s.png"></a></span>
+            </div>
+            -->
+        </div>
+        <div class="comments">
+            <h2>Comments !</h2>
+            <div id="disqus_thread"></div>
+            <script type="text/javascript">
+            var disqus_identifier = "remove-full-path-from-terminal.html";
+            (function() {
+                var dsq = document.createElement('script');
+                dsq.type = 'text/javascript'; dsq.async = true;
+                dsq.src = 'https://jasonfigueroa.disqus.com/embed.js';
+                (document.getElementsByTagName('head')[0] ||
+                 document.getElementsByTagName('body')[0]).appendChild(dsq);
+            })();
+            </script>
+        </div>
+    </article>
 </section>
-        <section id="extras" class="body">
-                <div class="blogroll">
-                        <h2>links</h2>
-                        <ul>
-                            <li><a href="http://getpelican.com/">Pelican</a></li>
-                            <li><a href="http://python.org/">Python.org</a></li>
-                            <li><a href="http://jinja.pocoo.org/">Jinja2</a></li>
-                            <li><a href="#">You can modify those links in your config file</a></li>
-                        </ul>
-                </div><!-- /.blogroll -->
-                <div class="social">
-                        <h2>social</h2>
-                        <ul>
-                            <li><a href="https://jasonfigueroa.github.io/feeds/all.atom.xml" type="application/atom+xml" rel="alternate">atom feed</a></li>
+  </article>
 
-                            <li><a href="#">You can add links in your config file</a></li>
-                            <li><a href="#">Another social link</a></li>
-                        </ul>
-                </div><!-- /.social -->
-        </section><!-- /#extras -->
+  <!-- Footer -->
+  <footer>
+    <p>
+      Blog powered by <a href="http://getpelican.com/" target="_blank">Pelican</a>.
+      This theme is a modification of <a href="https://github.com/parbhat/pelican-blue" target="_blank">Pelican-Blue</a> by <a href="https://parbhatpuri.com/" target="_blank">@parbhat</a>.
+    </p>
+  </footer>
 
-        <footer id="contentinfo" class="body">
-                <address id="about" class="vcard body">
-                Proudly powered by <a href="http://getpelican.com/">Pelican</a>, which takes great advantage of <a href="http://python.org">Python</a>.
-                </address><!-- /#about -->
-
-                <p>The theme is by <a href="http://coding.smashingmagazine.com/2009/08/04/designing-a-html-5-layout-from-scratch/">Smashing Magazine</a>, thanks!</p>
-        </footer><!-- /#contentinfo -->
 
 </body>
 </html>

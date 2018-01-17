@@ -1,83 +1,119 @@
-<!DOCTYPE html>
-<html lang="en">
+<!doctype html>
+<html lang="en" itemscope itemtype="http://schema.org/Person">
 <head>
-        <meta charset="utf-8" />
-        <title>Jason Figueroa - c programming</title>
-        <link rel="stylesheet" href="https://jasonfigueroa.github.io/theme/css/main.css" />
-        <link href="https://jasonfigueroa.github.io/feeds/all.atom.xml" type="application/atom+xml" rel="alternate" title="Jason Figueroa Atom Feed" />
+  <meta charset="utf-8">
+  <!-- Site Meta Data -->
+  <title>Jason Figueroa - c programming</title>
+  <meta name="viewport" content="width=device-width, initial-scale=1">
+  <meta name="description" content="">
+  <meta name="author" content="Jason Figueroa">
 
-        <!--[if IE]>
-            <script src="https://html5shiv.googlecode.com/svn/trunk/html5.js"></script>
-        <![endif]-->
+  <link rel="shortcut icon" href="https://jasonfigueroa.github.io/images/favicon.ico">
+
+  <!-- schema.org -->
+  <meta itemprop="name" content="Jason Figueroa">
+  <meta itemprop="image" content="">
+  <meta itemprop="description" content="">
+
+  <link href='https://fonts.googleapis.com/css?family=Open+Sans:400,600,700' rel='stylesheet' type='text/css'>
+  <!-- Style Meta Data -->
+  <link rel="stylesheet" href="https://jasonfigueroa.github.io/theme/css/style.css" type="text/css" />
+  <link rel="stylesheet" href="https://jasonfigueroa.github.io/theme/css/pygments.css" type="text/css" />
+
+  <!-- Feed Meta Data -->
+
+  <!-- Twitter Feed -->
+  <meta name="twitter:card" content="summary">
+  <meta name="twitter:site" content="">
+  <meta name="twitter:image" content="">
+
+<meta name="twitter:creator" content="">
+<meta name="twitter:url" content="https://jasonfigueroa.github.io">
+<meta name="twitter:title" content="Jason Figueroa">
+<meta name="twitter:description" content="Passionate Learner">
+
+<!-- Facebook Meta Data -->
+<meta property="og:title" content="Jason Figueroa" />
+<meta property="og:description" content="Passionate Learner" />
+<meta property="og:image" content="" />
+
+<meta name="twitter:creator" content="">
+<meta name="twitter:url" content="https://jasonfigueroa.github.io/category/c-programming.html">
+<meta name="twitter:title" content="Jason Figueroa ~ c programming">
+<meta name="twitter:description" content="Articles de c programming">
+
+<!-- Facebook Meta Data -->
+<meta property="og:title" content="Jason Figueroa ~ c programming" />
+<meta property="og:description" content="Articles de c programming" />
+<meta property="og:image" content="" />
 </head>
 
-<body id="index" class="home">
-        <header id="banner" class="body">
-                <h1><a href="https://jasonfigueroa.github.io/">Jason Figueroa </a></h1>
-                <nav><ul>
-                    <li><a href="https://jasonfigueroa.github.io/pages/about-me.html">About Me</a></li>
-                    <li><a href="https://jasonfigueroa.github.io/pages/about-site.html">About This Site</a></li>
-                    <li><a href="https://jasonfigueroa.github.io/category/bash.html">bash</a></li>
-                    <li class="active"><a href="https://jasonfigueroa.github.io/category/c-programming.html">c programming</a></li>
-                </ul></nav>
-        </header><!-- /#banner -->
+<body>
+  <!-- Sidebar -->
+  <aside>
+    <!--<center><a href="https://jasonfigueroa.github.io"><img id="avatar" src=""></a></center>-->
+    <h1>Jason Figueroa</h1>
+      <p>Passionate Learner</p>
+    
+    <!-- removed the following on 3/29/2017 -->
+    <!-- <br> -->
 
-            <aside id="featured" class="body">
-                <article>
-                    <h1 class="entry-title"><a href="https://jasonfigueroa.github.io/back-to-c.html">Back to C</a></h1>
-<footer class="post-info">
-        <abbr class="published" title="2017-03-29T18:38:00-05:00">
-                Published: Wed 29 March 2017
-        </abbr>
 
-        <address class="vcard author">
-                By                         <a class="url fn" href="https://jasonfigueroa.github.io/author/jason-figueroa.html">Jason Figueroa</a>
-        </address>
-<p>In <a href="https://jasonfigueroa.github.io/category/c-programming.html">c programming</a>.</p>
-<p>tags: <a href="https://jasonfigueroa.github.io/tag/c-programming.html">c programming</a> </p>
-</footer><!-- /.post-info --><p>Why am I all of a sudden finding myself wanting to program in C? C is a very low level language which some say is real close to the metal, that sounds so awesome ;) . Any lower than that and one would have to program in assembly. I'll give you a peak at how my brain works and why I'm starting to program in C again.</p>
-<p>Lately Data Science has really been interesting me. Well it turns out that my university started offering a Masters program in Data Analytics in 2016. I took a look at the curriculum and it sounds like it's pretty spot on. It turns out there are some prerequisites I'll have to take care of in addition to an exam known as the GRE, ew (the exam not the prereqs) . I'll also have to take care of some prerequisites to some prerequisites, what am I getting myself into (－‸ლ) .  </p>
-<p>It turns out one of the prerequisites for Machine Learning I, one of the required courses, is Artificial Intelligence. I decided to dig around the internet for some sort of free Artifical Intelligence tutorials and discovered a free course on <a href="https://www.edx.org/" target="_blank">edx</a> from Columbia University, great! I completed the first week tutorials and scored well on the quiz. Feeling good about myself, I decided to take a look at the project for the second week. The project calls for implementations of Breadth First Search, Depth First Search, A-Star Search and IDA-Star Search. The first two I implemented in Data Structures and Algorithms II, a course I took in the Spring of 2015. The last two didn't sound familiar. </p>
-<p>So I drew a binary tree on my whiteboard and walked through the Breadth First Search. As an Abstract Data Type it's difficult to forget, but when I started thinking about the implementation things became increasingly more difficult. So I decided to brush up on my Data Structures and Algorithms, going all the way back to the what I saw in the first Data Structures and Algorithms course I took. The course was taught in C and the <a href="https://www.youtube.com/user/mycodeschool" target="_blank">videos</a> which I supplemented my coursework with were in C/C++. </p>
-<p>So far I've gone through all of the <a href="https://www.youtube.com/playlist?list=PL2_aWCzGMAwLZp6LMUKI3cc7pgGsasm2_" target="_blank">Pointer videos</a> except the last three. Now I'm starting the Search Algorithms videos. You know what I've realized, C IS AWESOME! It really is a fun language. I've also discoverd an <a href="https://notabug.org/koz.ross/awesome-c" target="_blank">Awesome-List</a> of C libraries. I really want to check out SQlite with C and some of the other neat things listed in Awesome-C but I've got to stay focused on Data Structures and Algorithms for the moment. This trip back to C has also made me curious about C++ but I have to stay on track. There just isn't enough hours in the day &gt;:( .</p>
-<p>Anyway, I'm having fun and I will end up trying to implement some neat things in C. I would like to do some C programming on my Raspberry Pi, it just seems like the perfect platform to take advantage of this light and powerful language.</p>
-<p>Some of the resources that were mentioned above.</p>
-<ul>
-    <li><a href="https://www.youtube.com/user/mycodeschool" target="_blank">mycodeschool</a> - awesome youtube channel with lots of great tutorials</li>
-    <li><a href="https://www.edx.org/" target="_blank">edX</a> - free online courses from the top universities around the world</li>
-    <li><a href="https://notabug.org/koz.ross/awesome-c" target="_blank">awesome-c</a> - a very good list of C goodies</li>
-</ul>
+    <nav class="nav">
+      <ul class="list-bare">
+      
+          <li><a class="nav__link" href="https://jasonfigueroa.github.io">Blog</a></li>
+          <li><a class="nav__link" href="https://jasonfigueroa.github.io/pages/about-me.html">About Me</a></li>
+          <li><a class="nav__link" href="https://jasonfigueroa.github.io/pages/about-site.html">About This Site</a></li>
+         
+        
+      </ul>
+    </nav>
 
-<p>This article was created using <a href="http://dillinger.io/" target="_blank">dillinger</a>, an open source markdown editor. </p>                </article>
-            </aside><!-- /#featured -->
-        <section id="extras" class="body">
-                <div class="blogroll">
-                        <h2>links</h2>
-                        <ul>
-                            <li><a href="http://getpelican.com/">Pelican</a></li>
-                            <li><a href="http://python.org/">Python.org</a></li>
-                            <li><a href="http://jinja.pocoo.org/">Jinja2</a></li>
-                            <li><a href="#">You can modify those links in your config file</a></li>
-                        </ul>
-                </div><!-- /.blogroll -->
-                <div class="social">
-                        <h2>social</h2>
-                        <ul>
-                            <li><a href="https://jasonfigueroa.github.io/feeds/all.atom.xml" type="application/atom+xml" rel="alternate">atom feed</a></li>
+    <p class="social">
+        <a href="https://twitter.com/jasonfigueroa_" target="_blank" ><img src="https://jasonfigueroa.github.io/theme/images/icons/twitter.png"></a>
+        <a href="https://github.com/jasonfigueroa" target="_blank" ><img src="https://jasonfigueroa.github.io/theme/images/icons/github.png"></a>
+        <a href="https://www.linkedin.com/in/jason-figueroa-b59a3798/" target="_blank" ><img src="https://jasonfigueroa.github.io/theme/images/icons/linkedin.png"></a>
+    </p>
 
-                            <li><a href="#">You can add links in your config file</a></li>
-                            <li><a href="#">Another social link</a></li>
-                        </ul>
-                </div><!-- /.social -->
-        </section><!-- /#extras -->
+    <h2>Categories</h2>
+    <ul class="navbar">
+      <li><a href="https://jasonfigueroa.github.io/category/bash.html">bash</a></li>
+      <li class="active"><a href="https://jasonfigueroa.github.io/category/c-programming.html">c programming</a></li>
+    </ul> 
 
-        <footer id="contentinfo" class="body">
-                <address id="about" class="vcard body">
-                Proudly powered by <a href="http://getpelican.com/">Pelican</a>, which takes great advantage of <a href="http://python.org">Python</a>.
-                </address><!-- /#about -->
 
-                <p>The theme is by <a href="http://coding.smashingmagazine.com/2009/08/04/designing-a-html-5-layout-from-scratch/">Smashing Magazine</a>, thanks!</p>
-        </footer><!-- /#contentinfo -->
+  </aside>
+
+  <!-- Content -->
+  <article>
+
+<!-- changed the following to make it a little more casual -->
+<!-- <h1 class="title">Hi, I'm Jason Figueroa</h1> -->
+<h1 class="title">Hi, I'm Jason</h1>
+
+<ol>
+	<h2 class="latest">Latest Posts</h2>
+	<li class="post_list"><p class="post_entry">
+		<h2 class="post_title"><a href="https://jasonfigueroa.github.io/back-to-c.html" rel="bookmark" title="Permalink to Back to C">Back to C</a></h2>
+		<a href="https://jasonfigueroa.github.io/author/jason-figueroa.html">@Jason Figueroa</a>
+		<span> in </span>
+		<span class="post_category"><a href="https://jasonfigueroa.github.io/category/c-programming.html" rel="bookmark" title="Permalink to c programming">[ c programming ]</a></span>
+		<span class="post_date">Wed 29 March 2017</span>
+	</li>
+</ol>
+
+
+  </article>
+
+  <!-- Footer -->
+  <footer>
+    <p>
+      Blog powered by <a href="http://getpelican.com/" target="_blank">Pelican</a>.
+      This theme is a modification of <a href="https://github.com/parbhat/pelican-blue" target="_blank">Pelican-Blue</a> by <a href="https://parbhatpuri.com/" target="_blank">@parbhat</a>.
+    </p>
+  </footer>
+
 
 </body>
 </html>
