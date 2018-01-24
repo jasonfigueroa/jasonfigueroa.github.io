@@ -1,0 +1,163 @@
+<!doctype html>
+<html lang="en" itemscope itemtype="http://schema.org/Person">
+<head>
+  <meta charset="utf-8">
+  <!-- Site Meta Data -->
+  <title>Curl Examples for Testing API</title>
+  <meta name="viewport" content="width=device-width, initial-scale=1">
+  <meta name="description" content="">
+  <meta name="author" content="Jason Figueroa">
+
+  <link rel="shortcut icon" href="https://jasonfigueroa.github.io/images/favicon.ico">
+
+  <!-- schema.org -->
+  <meta itemprop="name" content="Jason Figueroa">
+  <meta itemprop="image" content="">
+  <meta itemprop="description" content="">
+
+  <link href='https://fonts.googleapis.com/css?family=Open+Sans:400,600,700' rel='stylesheet' type='text/css'>
+  <!-- Style Meta Data -->
+  <link rel="stylesheet" href="https://jasonfigueroa.github.io/theme/css/style.css" type="text/css" />
+  <link rel="stylesheet" href="https://jasonfigueroa.github.io/theme/css/pygments.css" type="text/css" />
+
+  <!-- Feed Meta Data -->
+
+  <!-- Twitter Feed -->
+  <meta name="twitter:card" content="summary">
+  <meta name="twitter:site" content="">
+  <meta name="twitter:image" content="">
+
+<meta name="twitter:creator" content="">
+<meta name="twitter:url" content="https://jasonfigueroa.github.io/curl-examples-for-testing-api.html">
+<meta name="twitter:title" content="Jason Figueroa ~ Curl Examples for Testing API">
+<meta name="twitter:description" content="The following are just a few examples I gathered for testing a basic API I created using ASP.NET Core. I will probably edit this article later. It&#39;s getting late and I just want to retain the information for now. Note: I am in a Linux environment and I&#39;m piping …">
+
+<!-- Facebook Meta Data -->
+<meta property="og:title" content="Jason Figueroa ~ Curl Examples for Testing API" />
+<meta property="og:description" content="The following are just a few examples I gathered for testing a basic API I created using ASP.NET Core. I will probably edit this article later. It&#39;s getting late and I just want to retain the information for now. Note: I am in a Linux environment and I&#39;m piping …" />
+<meta property="og:image" content="" />
+</head>
+
+<body>
+  <!-- Sidebar -->
+  <aside>
+    <!--<center><a href="https://jasonfigueroa.github.io"><img id="avatar" src=""></a></center>-->
+    <h1>Jason Figueroa</h1>
+      <p>Passionate Learner</p>
+    
+    <!-- removed the following on 3/29/2017 -->
+    <!-- <br> -->
+
+
+    <nav class="nav">
+      <ul class="list-bare">
+      
+          <li><a class="nav__link" href="https://jasonfigueroa.github.io">Blog</a></li>
+          <li><a class="nav__link" href="https://jasonfigueroa.github.io/pages/about-me.html">About Me</a></li>
+          <li><a class="nav__link" href="https://jasonfigueroa.github.io/pages/about-site.html">About This Site</a></li>
+         
+        
+      </ul>
+    </nav>
+
+    <p class="social">
+        <a href="https://twitter.com/jasonfigueroa_" target="_blank" ><img src="https://jasonfigueroa.github.io/theme/images/icons/twitter.png"></a>
+        <a href="https://github.com/jasonfigueroa" target="_blank" ><img src="https://jasonfigueroa.github.io/theme/images/icons/github.png"></a>
+        <a href="https://www.linkedin.com/in/jason-figueroa-b59a3798/" target="_blank" ><img src="https://jasonfigueroa.github.io/theme/images/icons/linkedin.png"></a>
+    </p>
+
+    <h2>Categories</h2>
+    <ul class="navbar">
+      <li><a href="https://jasonfigueroa.github.io/category/bash.html">bash</a></li>
+      <li><a href="https://jasonfigueroa.github.io/category/c-programming.html">c programming</a></li>
+      <li class="active"><a href="https://jasonfigueroa.github.io/category/curl.html">curl</a></li>
+      <li><a href="https://jasonfigueroa.github.io/category/dotnet-core.html">dotnet core</a></li>
+      <li><a href="https://jasonfigueroa.github.io/category/linux-mint.html">linux mint</a></li>
+      <li><a href="https://jasonfigueroa.github.io/category/visual-studio-code.html">visual studio code</a></li>
+    </ul> 
+
+
+  </aside>
+
+  <!-- Content -->
+  <article>
+<section id="content">
+    <article>
+        <h2 class="post_title post_detail"><a href="https://jasonfigueroa.github.io/curl-examples-for-testing-api.html" rel="bookmark" title="Permalink to Curl Examples for Testing API">Curl Examples for Testing API</a></h2>
+        <div class="entry-content blog-post">
+            <p>The following are just a few examples I gathered for testing a basic API I created using ASP.NET Core. I will probably edit this article later. It's getting late and I just want to retain the information for now.</p>
+<p><span style="color:red;"><em>Note: I am in a Linux environment and I'm piping a python command to prettify the returned JSON.</em></span></p>
+<h1>GET Examples</h1>
+<div class="highlight"><pre><span></span>curl localhost:5000/api/todo/ <span class="p">|</span> python -m json.tool
+curl localhost:5000/api/todo/1 <span class="p">|</span> python -m json.tool
+</pre></div>
+
+
+<h1>POST Example</h1>
+<div class="highlight"><pre><span></span>curl -i -X POST -H <span class="s2">&quot;Content-Type:application/json&quot;</span> localhost:5000/api/todo -d <span class="s1">&#39;{&quot;Name&quot;:&quot;New Todo Item&quot;}&#39;</span>
+</pre></div>
+
+
+<h1>PUT Example</h1>
+<p>For PUT I found that the order of the key/value pairs in the json string have to match the order of the key/value pairs in the database.</p>
+<div class="highlight"><pre><span></span>curl -X PUT -H <span class="s2">&quot;Content-Type: application/json&quot;</span> -d <span class="s1">&#39;{&quot;id&quot;:6, &quot;isComplete&quot;:true, &quot;name&quot;:&quot;New Todo Item&quot;}&#39;</span> localhost:5000/api/todo/6
+</pre></div>
+
+
+<h1>DELETE Example</h1>
+<div class="highlight"><pre><span></span>curl -X <span class="s2">&quot;DELETE&quot;</span> localhost:5000/api/todo/6
+</pre></div>
+        </div>
+        <div class="post_list">
+            <span>By </span>
+            <a href="https://jasonfigueroa.github.io/author/jason-figueroa.html">@Jason Figueroa</a>
+            <span> in </span>
+            <span class="post_category"><a href="https://jasonfigueroa.github.io/category/curl.html" rel="bookmark" title="Permalink to curl">[ curl ]</a></span>
+            <span class="post_date">Tue 23 January 2018</span>
+            <div><span>Tags : </span>
+                <span><a href="https://jasonfigueroa.github.io/tag/curl.html">#curl, </a></span>
+            </div>
+
+            <!-- disabled the following block on 3/29/2017, until I can take a closer look
+            <div class="entry-social">
+                <span class="twitter"><a target="_blank" rel="nofollow" onclick="javascript:window.open(this.href, '', 'menubar=no,toolbar=no,resizable=yes,scrollbars=yes,height=400,width=700');return false;" title="Twitter" href="https://twitter.com/share?url=https://jasonfigueroa.github.io/curl-examples-for-testing-api.html&text=Curl Examples for Testing API&via="><img src="https://jasonfigueroa.github.io/theme/images/icons/twitter-s.png"></a></span>
+
+                <span class="gplus"><a target="_blank" title="Google +" href="https://plus.google.com/share?url=https://jasonfigueroa.github.io/curl-examples-for-testing-api.html&hl=fr" rel="nofollow" onclick="javascript:window.open(this.href, '', 'menubar=no,toolbar=no,resizable=yes,scrollbars=yes,height=450,width=650');return false;"><img src="https://jasonfigueroa.github.io/theme/images/icons/google-s.png"></a></span>
+
+                <span class="facebook"><a target="_blank" title="Facebook" rel="nofollow" onclick="javascript:window.open(this.href, '', 'menubar=no,toolbar=no,resizable=yes,scrollbars=yes,height=500,width=700');return false;" href="https://www.facebook.com/sharer.php?u=https://jasonfigueroa.github.io/curl-examples-for-testing-api.html&t=Curl Examples for Testing API"><img src="https://jasonfigueroa.github.io/theme/images/icons/facebook-s.png"></a></span>
+
+                <a  target="_blank" title="Linkedin" href="https://www.linkedin.com/shareArticle?mini=true&url=https://jasonfigueroa.github.io/curl-examples-for-testing-api.html&title=Curl Examples for Testing API" rel="nofollow" onclick="javascript:window.open(this.href, '', 'menubar=no,toolbar=no,resizable=yes,scrollbars=yes,height=450,width=650');return false;"><img src="https://jasonfigueroa.github.io/theme/images/icons/linkedin-s.png"></a>
+
+                <span class="mail"><a href="mailto:?subject=Curl Examples for Testing API&amp;body=Viens découvrir un article à propos de [Curl Examples for Testing API] sur le site de Jason Figueroa. https://jasonfigueroa.github.io/curl-examples-for-testing-api.html" title="Share by Email" target="_blank"><img src="https://jasonfigueroa.github.io/theme/images/icons/mail-s.png"></a></span>
+            </div>
+            -->
+        </div>
+        <div class="comments">
+            <h2>Comments !</h2>
+            <div id="disqus_thread"></div>
+            <script type="text/javascript">
+            var disqus_identifier = "curl-examples-for-testing-api.html";
+            (function() {
+                var dsq = document.createElement('script');
+                dsq.type = 'text/javascript'; dsq.async = true;
+                dsq.src = 'https://jasonfigueroa.disqus.com/embed.js';
+                (document.getElementsByTagName('head')[0] ||
+                 document.getElementsByTagName('body')[0]).appendChild(dsq);
+            })();
+            </script>
+        </div>
+    </article>
+</section>
+  </article>
+
+  <!-- Footer -->
+  <footer>
+    <p>
+      Blog powered by <a href="http://getpelican.com/" target="_blank">Pelican</a>.
+      This theme is a modification of <a href="https://github.com/parbhat/pelican-blue" target="_blank">Pelican-Blue</a> by <a href="https://parbhatpuri.com/" target="_blank">@parbhat</a>.
+    </p>
+  </footer>
+
+
+</body>
+</html>
