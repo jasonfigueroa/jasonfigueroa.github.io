@@ -3,8 +3,9 @@
 
 AUTHOR = 'Jason Figueroa'
 SITENAME = 'Jason Figueroa'
+SITEURL = 'https://jasonfigueroa.github.io'
 # Dev server url
-SITEURL = 'http://localhost:8000'
+# SITEURL = 'http://localhost:8000'
 # Vagrant box url
 # SITEURL = 'http://localhost:8080'
 
