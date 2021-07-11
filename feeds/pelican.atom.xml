@@ -1,0 +1,24 @@
+<?xml version="1.0" encoding="utf-8"?>
+<feed xmlns="http://www.w3.org/2005/Atom"><title>Jason Figueroa - pelican</title><link href="https://jasonfigueroa.github.io/" rel="alternate"></link><link href="https://jasonfigueroa.github.io/feeds/pelican.atom.xml" rel="self"></link><id>https://jasonfigueroa.github.io/</id><updated>2017-08-01T08:43:00-05:00</updated><entry><title>Pelican Python3 Makefile error</title><link href="https://jasonfigueroa.github.io/pelican-python3-makefile-error.html" rel="alternate"></link><published>2017-08-01T08:43:00-05:00</published><updated>2017-08-01T08:43:00-05:00</updated><author><name>Jason Figueroa</name></author><id>tag:jasonfigueroa.github.io,2017-08-01:/pelican-python3-makefile-error.html</id><summary type="html">&lt;p&gt;Full error:&lt;/p&gt;
+&lt;div class="highlight"&gt;&lt;pre&gt;&lt;span&gt;&lt;/span&gt;&lt;code&gt;$ &lt;span class="nb"&gt;cd&lt;/span&gt; /home/&amp;lt;user&amp;gt;/path_to_project_root/output &lt;span class="o"&gt;&amp;amp;&amp;amp;&lt;/span&gt; python3 -m pelican.server
+$ /usr/bin/python3: Error &lt;span class="k"&gt;while&lt;/span&gt; finding spec &lt;span class="k"&gt;for&lt;/span&gt; &lt;span class="s1"&gt;&amp;#39;pelican.server&amp;#39;&lt;/span&gt; &lt;span class="o"&gt;(&lt;/span&gt;ImportError: No module named &lt;span class="s1"&gt;&amp;#39;pelican&amp;#39;&lt;/span&gt;&lt;span class="o"&gt;)&lt;/span&gt;
+$ Makefile:77: recipe &lt;span class="k"&gt;for&lt;/span&gt; target &lt;span class="s1"&gt;&amp;#39;serve&amp;#39;&lt;/span&gt; failed
+$ make: *** &lt;span class="o"&gt;[&lt;/span&gt;serve&lt;span class="o"&gt;]&lt;/span&gt; Error &lt;span class="m"&gt;1&lt;/span&gt;
+&lt;/code&gt;&lt;/pre&gt;&lt;/div&gt;
+
+&lt;p&gt;Description:&lt;/p&gt;
+&lt;p&gt;This error appears when trying to run &lt;strong&gt;make serve&lt;/strong&gt; from the terminal …&lt;/p&gt;</summary><content type="html">&lt;p&gt;Full error:&lt;/p&gt;
+&lt;div class="highlight"&gt;&lt;pre&gt;&lt;span&gt;&lt;/span&gt;&lt;code&gt;$ &lt;span class="nb"&gt;cd&lt;/span&gt; /home/&amp;lt;user&amp;gt;/path_to_project_root/output &lt;span class="o"&gt;&amp;amp;&amp;amp;&lt;/span&gt; python3 -m pelican.server
+$ /usr/bin/python3: Error &lt;span class="k"&gt;while&lt;/span&gt; finding spec &lt;span class="k"&gt;for&lt;/span&gt; &lt;span class="s1"&gt;&amp;#39;pelican.server&amp;#39;&lt;/span&gt; &lt;span class="o"&gt;(&lt;/span&gt;ImportError: No module named &lt;span class="s1"&gt;&amp;#39;pelican&amp;#39;&lt;/span&gt;&lt;span class="o"&gt;)&lt;/span&gt;
+$ Makefile:77: recipe &lt;span class="k"&gt;for&lt;/span&gt; target &lt;span class="s1"&gt;&amp;#39;serve&amp;#39;&lt;/span&gt; failed
+$ make: *** &lt;span class="o"&gt;[&lt;/span&gt;serve&lt;span class="o"&gt;]&lt;/span&gt; Error &lt;span class="m"&gt;1&lt;/span&gt;
+&lt;/code&gt;&lt;/pre&gt;&lt;/div&gt;
+
+&lt;p&gt;Description:&lt;/p&gt;
+&lt;p&gt;This error appears when trying to run &lt;strong&gt;make serve&lt;/strong&gt; from the terminal in a virtualenv environment where python3 is not installed and Makefile is configured for use with python3.&lt;/p&gt;
+&lt;p&gt;I would assume installing a version of python3 in virtual environment may solve this but I haven’t tested this.
+I fixed this by changing line 1 in Makefile from &lt;strong&gt;PY?=python3&lt;/strong&gt; to &lt;strong&gt;PY?=python&lt;/strong&gt;.&lt;/p&gt;
+&lt;p&gt;Before:&lt;/p&gt;
+&lt;p&gt;&lt;img alt="Makefile screenshot configured for python3" src="images/Makefile-python3-config-resize.png"&gt;&lt;/p&gt;
+&lt;p&gt;After:&lt;/p&gt;
+&lt;p&gt;&lt;img alt="Makefile screenshot configured for python2" src="images/Makefile-python2-config-resize.png"&gt;&lt;/p&gt;</content><category term="pelican"></category><category term="pelican"></category></entry></feed>
