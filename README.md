@@ -10,12 +10,16 @@
 
 # Run Dev Server
 
-1. In the terminal run `make devserver`
+1. In the terminal run `export DEV=1`
 
-2. In a browser navigate to http://localhost:8000
+2. In the terminal run `make devserver`
+
+3. In a browser navigate to http://localhost:8000
 
     *Note: To run on a different port, run something like this `make devserver PORT=8088`* 
 
 # Publish Blog
 
-1. In the terminal run `make github`
+1. In the terminal run `unset DEV`
+
+2. In the terminal run `make github`

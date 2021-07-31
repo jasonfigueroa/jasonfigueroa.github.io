@@ -1,14 +1,14 @@
 #!/usr/bin/env python
 # -*- coding: utf-8 -*- #
 
+import os
+
+dev = True if os.getenv('DEV') == '1' else False
+
 AUTHOR = 'Jason Figueroa'
 SITENAME = 'Jason Figueroa'
 
-# Production url
-SITEURL = 'https://jasonfigueroa.github.io'
-
-# Dev server url
-# SITEURL = 'http://localhost:8000'
+SITEURL = 'http://localhost:8000' if dev else 'https://jasonfigueroa.github.io'
 
 # Vagrant box url
 # SITEURL = 'http://localhost:8080'
