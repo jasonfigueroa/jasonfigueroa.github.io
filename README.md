@@ -1,11 +1,21 @@
-# To Update the Project
+# Getting Started
 
-1. Clone the repo located at [https://github.com/jasonfigueroa/jasonfigueroa.github.io](https://github.com/jasonfigueroa/jasonfigueroa.github.io)
+1. Clone the repo
 
-2. cd into the root directory of this project
+2. Navigate to the Project root directory
 
-3. Delete everything except for the **README.md** file and the **.git** directory
+3. Create a virtual environment `python3 -m venv venv`
 
-4. Copy all newly generated files into the root directory of this project 
+4. Install dependencies `pip install -r requirements.txt`
 
-5. Push all changes to the repo located at [https://github.com/jasonfigueroa/jasonfigueroa.github.io](https://github.com/jasonfigueroa/jasonfigueroa.github.io)
+# Run Dev Server
+
+1. In the terminal run `make devserver`
+
+2. In a browser navigate to http://localhost:8000
+
+    *Note: To run on a different port, run something like this `make devserver PORT=8088`* 
+
+# Publish Blog
+
+1. In the terminal run `make github`
