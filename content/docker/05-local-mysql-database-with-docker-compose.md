@@ -73,4 +73,7 @@ wget https://raw.githubusercontent.com/lerocha/chinook-database/master/ChinookDa
 
 ## Destroy Containers and Volume
 
-1. Destroy the Containers with `docker-compose down -v`
+1. Destroy the Containers with
+```sh
+docker-compose down -v
+```
