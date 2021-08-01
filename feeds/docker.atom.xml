@@ -73,7 +73,7 @@
 &lt;/ol&gt;
 &lt;h2&gt;Download the Chinook MySQL Import File&lt;/h2&gt;
 &lt;ol&gt;
-&lt;li&gt;Download the MySQL Chinook database import file&lt;div class="highlight"&gt;&lt;pre&gt;&lt;span&gt;&lt;/span&gt;&lt;code&gt;wget https://raw.githubusercontent.com/lerocha/chinook-database/master/ChinookDatabase/DataSources/Chinook_MySql_AutoIncrementPKs.sql
+&lt;li&gt;Download the MySQL Chinook database import file&lt;div class="highlight"&gt;&lt;pre&gt;&lt;span&gt;&lt;/span&gt;&lt;code&gt;wget &amp;#39;https://raw.githubusercontent.com/lerocha/chinook-database/master/ChinookDatabase/DataSources/Chinook_MySql_AutoIncrementPKs.sql&amp;#39;
 &lt;/code&gt;&lt;/pre&gt;&lt;/div&gt;
 
 &lt;/li&gt;
