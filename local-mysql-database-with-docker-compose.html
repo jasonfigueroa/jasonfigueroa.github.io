@@ -1,0 +1,224 @@
+<!doctype html>
+<html lang="en" itemscope itemtype="http://schema.org/Person">
+<head>
+  <meta charset="utf-8">
+  <!-- Site Meta Data -->
+  <title>Local MySQL Database with Docker Compose</title>
+  <meta name="viewport" content="width=device-width, initial-scale=1">
+  <meta name="description" content="">
+  <meta name="author" content="Jason Figueroa">
+
+  <link rel="shortcut icon" href="/images/favicon.ico">
+
+  <!-- schema.org -->
+  <meta itemprop="name" content="Jason Figueroa">
+  <meta itemprop="image" content="">
+  <meta itemprop="description" content="">
+
+  <link href='https://fonts.googleapis.com/css?family=Open+Sans:400,600,700' rel='stylesheet' type='text/css'>
+  <!-- Style Meta Data -->
+  <link rel="stylesheet" href="https://jasonfigueroa.github.io/theme/css/style.css" type="text/css" />
+  <link rel="stylesheet" href="https://jasonfigueroa.github.io/theme/css/pygments.css" type="text/css" />
+
+  <!-- Feed Meta Data -->
+    <link href="https://jasonfigueroa.github.io/feeds/all.atom.xml" type="application/atom+xml" rel="alternate" title="Jason Figueroa ATOM Feed" />
+
+  <!-- Twitter Feed -->
+  <meta name="twitter:card" content="summary">
+  <meta name="twitter:site" content="">
+  <meta name="twitter:image" content="">
+
+<meta name="twitter:creator" content="">
+<meta name="twitter:url" content="https://jasonfigueroa.github.io/local-mysql-database-with-docker-compose.html">
+<meta name="twitter:title" content="Jason Figueroa ~ Local MySQL Database with Docker Compose">
+<meta name="twitter:description" content="These are some brief instructions for installing a local MySQL database, using Docker Compose, for local development. Install Containers Download the docker-compose.yml file wget https://gist.githubusercontent.com/jasonfigueroa/78db9eb5797b3351007b44fb18eae956/raw/871f6ee5354bfd61fcb53dace54a56c29b5f1a56/docker-compose.yml Install the containers docker-compose up Setup Non-Root User See the containers running docker-compose ps Take …">
+
+<!-- Facebook Meta Data -->
+<meta property="og:title" content="Jason Figueroa ~ Local MySQL Database with Docker Compose" />
+<meta property="og:description" content="These are some brief instructions for installing a local MySQL database, using Docker Compose, for local development. Install Containers Download the docker-compose.yml file wget https://gist.githubusercontent.com/jasonfigueroa/78db9eb5797b3351007b44fb18eae956/raw/871f6ee5354bfd61fcb53dace54a56c29b5f1a56/docker-compose.yml Install the containers docker-compose up Setup Non-Root User See the containers running docker-compose ps Take …" />
+<meta property="og:image" content="" />
+</head>
+
+<body>
+  <!-- Sidebar -->
+  <aside>
+    <!--<center><a href="https://jasonfigueroa.github.io"><img id="avatar" src=""></a></center>-->
+    <h1>Jason Figueroa</h1>
+      <p>Passionate Learner</p>
+    
+    <!-- removed the following on 3/29/2017 -->
+    <!-- <br> -->
+
+
+    <nav class="nav">
+      <ul class="list-bare">
+      
+          <li><a class="nav__link" href="https://jasonfigueroa.github.io">Blog</a></li>
+          <li><a class="nav__link" href="/pages/about-me.html">About Me</a></li>
+          <li><a class="nav__link" href="/pages/about-site.html">About This Site</a></li>
+         
+        
+      </ul>
+    </nav>
+
+    <p class="social">
+        <a href="https://twitter.com/jasonfigueroa_" target="_blank" ><img src="https://jasonfigueroa.github.io/theme/images/icons/twitter.png"></a>
+        <a href="https://github.com/jasonfigueroa" target="_blank" ><img src="https://jasonfigueroa.github.io/theme/images/icons/github.png"></a>
+        <a href="https://www.linkedin.com/in/jason-figueroa-b59a3798/" target="_blank" ><img src="https://jasonfigueroa.github.io/theme/images/icons/linkedin.png"></a>
+      <a href="https://jasonfigueroa.github.io/feeds/all.atom.xml" rel="alternate">
+        <img src="https://jasonfigueroa.github.io/theme/images/icons/rss.png"></a>
+    </p>
+
+    <h2>Categories</h2>
+    <ul class="navbar">
+      <li><a href="https://jasonfigueroa.github.io/category/bash.html">bash</a></li>
+      <li><a href="https://jasonfigueroa.github.io/category/c-programming.html">c programming</a></li>
+      <li class="active"><a href="https://jasonfigueroa.github.io/category/docker.html">docker</a></li>
+      <li><a href="https://jasonfigueroa.github.io/category/pelican.html">pelican</a></li>
+      <li><a href="https://jasonfigueroa.github.io/category/vagrant.html">vagrant</a></li>
+    </ul> 
+
+
+  </aside>
+
+  <!-- Content -->
+  <article>
+<section id="content">
+    <article>
+        <h2 class="post_title post_detail"><a href="https://jasonfigueroa.github.io/local-mysql-database-with-docker-compose.html" rel="bookmark" title="Permalink to Local MySQL Database with Docker Compose">Local MySQL Database with Docker Compose</a></h2>
+        <div class="entry-content blog-post">
+            <p>These are some brief instructions for installing a local MySQL database, using Docker Compose, for local development.</p>
+<h2>Install Containers</h2>
+<ol>
+<li>Download the docker-compose.yml file</li>
+</ol>
+<div class="highlight"><pre><span></span><code>wget https://gist.githubusercontent.com/jasonfigueroa/78db9eb5797b3351007b44fb18eae956/raw/871f6ee5354bfd61fcb53dace54a56c29b5f1a56/docker-compose.yml
+</code></pre></div>
+
+<ol>
+<li>Install the containers</li>
+</ol>
+<div class="highlight"><pre><span></span><code>docker-compose up
+</code></pre></div>
+
+<h2>Setup Non-Root User</h2>
+<ol>
+<li>See the containers running</li>
+</ol>
+<div class="highlight"><pre><span></span><code>docker-compose ps
+</code></pre></div>
+
+<ol>
+<li>Take note of the Name of the database container, in this example it's docker_db_1</li>
+</ol>
+<p><img alt="Database container name in the terminal" src="images/database-container-name.png"></p>
+<ol>
+<li>Connect to the database server using the database container name</li>
+</ol>
+<div class="highlight"><pre><span></span><code>docker <span class="nb">exec</span> -it docker_db_1 mysql -uroot -prootpass
+</code></pre></div>
+
+<ol>
+<li>Grant all privileges to the non-root user</li>
+</ol>
+<div class="highlight"><pre><span></span><code>GRANT ALL PRIVILEGES ON *.* TO <span class="s1">&#39;user&#39;</span>@<span class="s1">&#39;%&#39;</span> WITH GRANT OPTION<span class="p">;</span>
+</code></pre></div>
+
+<ol>
+<li>Flush privileges</li>
+</ol>
+<div class="highlight"><pre><span></span><code>FLUSH PRIVILEGES<span class="p">;</span>
+</code></pre></div>
+
+<h2>Download the Chinook MySQL Import File</h2>
+<ol>
+<li>Download the MySQL Chinook database import file</li>
+</ol>
+<div class="highlight"><pre><span></span><code>wget https://raw.githubusercontent.com/lerocha/chinook-database/master/ChinookDatabase/DataSources/Chinook_MySql_AutoIncrementPKs.sql
+</code></pre></div>
+
+<h2>Login and Import the Chinook Database</h2>
+<ol>
+<li>
+<p>Navigate to <a href="http://localhost:8088" target="_blank">http://localhost:8088</a> in a browser</p>
+</li>
+<li>
+<p>Login with username: user, password: userpass, database: Chinook</p>
+</li>
+</ol>
+<p><img alt="Login page for Adminer" src="images/adminer-login.png"></p>
+<ol>
+<li>Click on Import at the top left.</li>
+</ol>
+<p><img alt="Adminer import database link" src="images/adminer-database-import-link.png"></p>
+<ol>
+<li>
+<p>Under File Upload click on Browse and select the Chinook_MySql_AutoIncrementPKs.sql</p>
+</li>
+<li>
+<p>Click the Execute button and wait a minute or two</p>
+</li>
+<li>
+<p>You should see the sidebar populate with the tables.</p>
+</li>
+</ol>
+<p><img alt="Adminer sidebar with tables" src="images/sidebar-with-tables.png"></p>
+<h2>Destroy Containers and Volume</h2>
+<ol>
+<li>Destroy the Containers with <code>docker-compose down -v</code></li>
+</ol>
+        </div>
+        <div class="post_list">
+            <span>By </span>
+            <a href="https://jasonfigueroa.github.io/author/jason-figueroa.html">@Jason Figueroa</a>
+            <span> in </span>
+            <span class="post_category"><a href="https://jasonfigueroa.github.io/category/docker.html" rel="bookmark" title="Permalink to docker">[ docker ]</a></span>
+            <span class="post_date">Sat 31 July 2021</span>
+            <div><span>Tags : </span>
+                <span><a href="https://jasonfigueroa.github.io/tag/docker.html">#docker, </a></span>
+                <span><a href="https://jasonfigueroa.github.io/tag/mysql.html">#mysql, </a></span>
+            </div>
+
+            <!-- disabled the following block on 3/29/2017, until I can take a closer look
+            <div class="entry-social">
+                <span class="twitter"><a target="_blank" rel="nofollow" onclick="javascript:window.open(this.href, '', 'menubar=no,toolbar=no,resizable=yes,scrollbars=yes,height=400,width=700');return false;" title="Twitter" href="https://twitter.com/share?url=https://jasonfigueroa.github.io/local-mysql-database-with-docker-compose.html&text=Local MySQL Database with Docker Compose&via="><img src="https://jasonfigueroa.github.io/theme/images/icons/twitter-s.png"></a></span>
+
+                <span class="gplus"><a target="_blank" title="Google +" href="https://plus.google.com/share?url=https://jasonfigueroa.github.io/local-mysql-database-with-docker-compose.html&hl=fr" rel="nofollow" onclick="javascript:window.open(this.href, '', 'menubar=no,toolbar=no,resizable=yes,scrollbars=yes,height=450,width=650');return false;"><img src="https://jasonfigueroa.github.io/theme/images/icons/google-s.png"></a></span>
+
+                <span class="facebook"><a target="_blank" title="Facebook" rel="nofollow" onclick="javascript:window.open(this.href, '', 'menubar=no,toolbar=no,resizable=yes,scrollbars=yes,height=500,width=700');return false;" href="https://www.facebook.com/sharer.php?u=https://jasonfigueroa.github.io/local-mysql-database-with-docker-compose.html&t=Local MySQL Database with Docker Compose"><img src="https://jasonfigueroa.github.io/theme/images/icons/facebook-s.png"></a></span>
+
+                <a  target="_blank" title="Linkedin" href="https://www.linkedin.com/shareArticle?mini=true&url=https://jasonfigueroa.github.io/local-mysql-database-with-docker-compose.html&title=Local MySQL Database with Docker Compose" rel="nofollow" onclick="javascript:window.open(this.href, '', 'menubar=no,toolbar=no,resizable=yes,scrollbars=yes,height=450,width=650');return false;"><img src="https://jasonfigueroa.github.io/theme/images/icons/linkedin-s.png"></a>
+
+                <span class="mail"><a href="mailto:?subject=Local MySQL Database with Docker Compose&amp;body=Viens découvrir un article à propos de [Local MySQL Database with Docker Compose] sur le site de Jason Figueroa. https://jasonfigueroa.github.io/local-mysql-database-with-docker-compose.html" title="Share by Email" target="_blank"><img src="https://jasonfigueroa.github.io/theme/images/icons/mail-s.png"></a></span>
+            </div>
+            -->
+        </div>
+        <div class="comments">
+            <h2>Comments !</h2>
+            <div id="disqus_thread"></div>
+            <script type="text/javascript">
+            var disqus_identifier = "local-mysql-database-with-docker-compose.html";
+            (function() {
+                var dsq = document.createElement('script');
+                dsq.type = 'text/javascript'; dsq.async = true;
+                dsq.src = 'https://jasonfigueroa.disqus.com/embed.js';
+                (document.getElementsByTagName('head')[0] ||
+                 document.getElementsByTagName('body')[0]).appendChild(dsq);
+            })();
+            </script>
+        </div>
+    </article>
+</section>
+  </article>
+
+  <!-- Footer -->
+  <footer>
+    <p>
+      Blog powered by <a href="http://getpelican.com/" target="_blank">Pelican</a>.
+      This theme is a modification of <a href="https://github.com/parbhat/pelican-blue" target="_blank">Pelican-Blue</a> by <a href="https://parbhatpuri.com/" target="_blank">@parbhat</a>.
+    </p>
+  </footer>
+
+
+</body>
+</html>
