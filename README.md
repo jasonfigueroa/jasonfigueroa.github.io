@@ -6,7 +6,9 @@
 
 3. Create a virtual environment `python3 -m venv venv`
 
-4. Install dependencies `pip install -r requirements.txt`
+4. Activate the virtual environment `source venv/bin/activate`
+
+5. Install dependencies `pip install -r requirements.txt`
 
 # Run Dev Server
 
