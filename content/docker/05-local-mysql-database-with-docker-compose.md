@@ -8,48 +8,45 @@ These are some brief instructions for installing a local MySQL database, using D
 
 1. Download the docker-compose.yml file
 
-```sh
-wget https://gist.githubusercontent.com/jasonfigueroa/78db9eb5797b3351007b44fb18eae956/raw/871f6ee5354bfd61fcb53dace54a56c29b5f1a56/docker-compose.yml
-```
+        wget 'https://gist.githubusercontent.com/jasonfigueroa/78db9eb5797b3351007b44fb18eae956/raw/871f6ee5354bfd61fcb53dace54a56c29b5f1a56/docker-compose.yml'
 
 2. Install the containers
-```sh
-docker-compose up
-```
+
+        docker-compose up
+
 
 ## Setup Non-Root User
 
 1. See the containers running
-```sh
-docker-compose ps
-```
+
+        docker-compose ps
 
 2. Take note of the Name of the database container, in this example it's docker_db_1
 
-![Database container name in the terminal](images/database-container-name.png)
+    ![Database container name in the terminal](images/database-container-name.png)
 
 3. Connect to the database server using the database container name
-```sh
-docker exec -it docker_db_1 mysql -uroot -prootpass
-```
+
+        docker exec -it docker_db_1 mysql -uroot -prootpass
+
 
 4. Grant all privileges to the non-root user
-```sh
-GRANT ALL PRIVILEGES ON *.* TO 'user'@'%' WITH GRANT OPTION;
-```
+
+        GRANT ALL PRIVILEGES ON *.* TO 'user'@'%' WITH GRANT OPTION;
+
 
 5. Flush privileges
-```sh
-FLUSH PRIVILEGES;
-```
+
+        FLUSH PRIVILEGES;
+
 
 ## Download the Chinook MySQL Import File
 
 1. Download the MySQL Chinook database import file
 
-```sh
-wget https://raw.githubusercontent.com/lerocha/chinook-database/master/ChinookDatabase/DataSources/Chinook_MySql_AutoIncrementPKs.sql
-```
+
+        wget 'https://raw.githubusercontent.com/lerocha/chinook-database/master/ChinookDatabase/DataSources/Chinook_MySql_AutoIncrementPKs.sql'
+
 
 ## Login and Import the Chinook Database
 
@@ -57,11 +54,11 @@ wget https://raw.githubusercontent.com/lerocha/chinook-database/master/ChinookDa
 
 2. Login with username: user, password: userpass, database: Chinook
 
-![Login page for Adminer](images/adminer-login.png)
+    ![Login page for Adminer](images/adminer-login.png)
 
 3. Click on Import at the top left.
 
-![Adminer import database link](images/adminer-database-import-link.png)
+    ![Adminer import database link](images/adminer-database-import-link.png)
 
 4. Under File Upload click on Browse and select the Chinook_MySql_AutoIncrementPKs.sql
 
@@ -69,11 +66,11 @@ wget https://raw.githubusercontent.com/lerocha/chinook-database/master/ChinookDa
 
 6. You should see the sidebar populate with the tables.
 
-![Adminer sidebar with tables](images/sidebar-with-tables.png)
+    ![Adminer sidebar with tables](images/sidebar-with-tables.png)
 
 ## Destroy Containers and Volume
 
 1. Destroy the Containers with
-```sh
-docker-compose down -v
-```
+
+        docker-compose down -v
+
