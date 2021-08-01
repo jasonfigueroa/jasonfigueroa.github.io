@@ -4,8 +4,7 @@
 &lt;ol&gt;
 &lt;li&gt;
 &lt;p&gt;Download the docker-compose.yml file&lt;/p&gt;
-&lt;p&gt;&lt;code&gt;sh
-wget https://gist.githubusercontent.com/jasonfigueroa/78db9eb5797b3351007b44fb18eae956/raw/871f6ee5354bfd61fcb53dace54a56c29b5f1a56/docker-compose.yml&lt;/code&gt;&lt;/p&gt;
+&lt;p&gt;&lt;code&gt;wget https://gist.githubusercontent.com/jasonfigueroa/78db9eb5797b3351007b44fb18eae956/raw/871f6ee5354bfd61fcb53dace54a56c29b5f1a56/docker-compose.yml&lt;/code&gt;&lt;/p&gt;
 &lt;/li&gt;
 &lt;li&gt;
 &lt;p&gt;Install the containers&lt;/p&gt;
@@ -18,13 +17,16 @@ wget https://gist.githubusercontent.com/jasonfigueroa/78db9eb5797b3351007b44fb18
 &lt;ol&gt;
 &lt;li&gt;See the containers running&lt;/li&gt;
 &lt;/ol&gt;
-&lt;div class="highlight"&gt;&lt;pre&gt;&lt;span&gt;&lt;/span&gt;&lt;code&gt;docker-compose ps …&lt;/code&gt;&lt;/pre&gt;&lt;/div&gt;</summary><content type="html">&lt;p&gt;These are some brief instructions for installing a local MySQL database, using Docker Compose, for local development.&lt;/p&gt;
+&lt;div class="highlight"&gt;&lt;pre&gt;&lt;span&gt;&lt;/span&gt;&lt;code&gt;docker-compose ps
+&lt;/code&gt;&lt;/pre&gt;&lt;/div&gt;
+
+&lt;ol&gt;
+&lt;li&gt;Take …&lt;/li&gt;&lt;/ol&gt;</summary><content type="html">&lt;p&gt;These are some brief instructions for installing a local MySQL database, using Docker Compose, for local development.&lt;/p&gt;
 &lt;h2&gt;Install Containers&lt;/h2&gt;
 &lt;ol&gt;
 &lt;li&gt;
 &lt;p&gt;Download the docker-compose.yml file&lt;/p&gt;
-&lt;p&gt;&lt;code&gt;sh
-wget https://gist.githubusercontent.com/jasonfigueroa/78db9eb5797b3351007b44fb18eae956/raw/871f6ee5354bfd61fcb53dace54a56c29b5f1a56/docker-compose.yml&lt;/code&gt;&lt;/p&gt;
+&lt;p&gt;&lt;code&gt;wget https://gist.githubusercontent.com/jasonfigueroa/78db9eb5797b3351007b44fb18eae956/raw/871f6ee5354bfd61fcb53dace54a56c29b5f1a56/docker-compose.yml&lt;/code&gt;&lt;/p&gt;
 &lt;/li&gt;
 &lt;li&gt;
 &lt;p&gt;Install the containers&lt;/p&gt;
