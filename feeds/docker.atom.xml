@@ -9,8 +9,8 @@
 
 &lt;/li&gt;
 &lt;li&gt;
-&lt;p&gt;Install the containers&lt;/p&gt;
-&lt;div class="highlight"&gt;&lt;pre&gt;&lt;span&gt;&lt;/span&gt;&lt;code&gt;docker-compose up
+&lt;p&gt;Install and run the containers&lt;/p&gt;
+&lt;div class="highlight"&gt;&lt;pre&gt;&lt;span&gt;&lt;/span&gt;&lt;code&gt;docker-compose up -d
 &lt;/code&gt;&lt;/pre&gt;&lt;/div&gt;
 
 &lt;/li&gt;
@@ -18,13 +18,7 @@
 &lt;h2&gt;Setup Non-Root User&lt;/h2&gt;
 &lt;ol&gt;
 &lt;li&gt;
-&lt;p&gt;See the containers running&lt;/p&gt;
-&lt;div class="highlight"&gt;&lt;pre&gt;&lt;span&gt;&lt;/span&gt;&lt;code&gt;docker-compose ps
-&lt;/code&gt;&lt;/pre&gt;&lt;/div&gt;
-
-&lt;/li&gt;
-&lt;li&gt;
-&lt;p&gt;Take …&lt;/p&gt;&lt;/li&gt;&lt;/ol&gt;</summary><content type="html">&lt;p&gt;These are some brief instructions for installing a local MySQL database, using Docker Compose, for local development.&lt;/p&gt;
+&lt;p&gt;See the containers running …&lt;/p&gt;&lt;/li&gt;&lt;/ol&gt;</summary><content type="html">&lt;p&gt;These are some brief instructions for installing a local MySQL database, using Docker Compose, for local development.&lt;/p&gt;
 &lt;h2&gt;Install Containers&lt;/h2&gt;
 &lt;ol&gt;
 &lt;li&gt;
@@ -34,8 +28,8 @@
 
 &lt;/li&gt;
 &lt;li&gt;
-&lt;p&gt;Install the containers&lt;/p&gt;
-&lt;div class="highlight"&gt;&lt;pre&gt;&lt;span&gt;&lt;/span&gt;&lt;code&gt;docker-compose up
+&lt;p&gt;Install and run the containers&lt;/p&gt;
+&lt;div class="highlight"&gt;&lt;pre&gt;&lt;span&gt;&lt;/span&gt;&lt;code&gt;docker-compose up -d
 &lt;/code&gt;&lt;/pre&gt;&lt;/div&gt;
 
 &lt;/li&gt;
@@ -67,6 +61,12 @@
 &lt;li&gt;
 &lt;p&gt;Flush privileges&lt;/p&gt;
 &lt;div class="highlight"&gt;&lt;pre&gt;&lt;span&gt;&lt;/span&gt;&lt;code&gt;FLUSH PRIVILEGES;
+&lt;/code&gt;&lt;/pre&gt;&lt;/div&gt;
+
+&lt;/li&gt;
+&lt;li&gt;
+&lt;p&gt;Exit MySQL Client&lt;/p&gt;
+&lt;div class="highlight"&gt;&lt;pre&gt;&lt;span&gt;&lt;/span&gt;&lt;code&gt;&lt;span class="k"&gt;exit&lt;/span&gt;
 &lt;/code&gt;&lt;/pre&gt;&lt;/div&gt;
 
 &lt;/li&gt;

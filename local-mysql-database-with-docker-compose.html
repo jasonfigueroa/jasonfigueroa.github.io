@@ -31,11 +31,11 @@
 <meta name="twitter:creator" content="">
 <meta name="twitter:url" content="https://jasonfigueroa.github.io/local-mysql-database-with-docker-compose.html">
 <meta name="twitter:title" content="Jason Figueroa ~ Local MySQL Database with Docker Compose">
-<meta name="twitter:description" content="These are some brief instructions for installing a local MySQL database, using Docker Compose, for local development. Install Containers Download the docker-compose.yml file wget &#39;https://gist.githubusercontent.com/jasonfigueroa/78db9eb5797b3351007b44fb18eae956/raw/871f6ee5354bfd61fcb53dace54a56c29b5f1a56/docker-compose.yml&#39; Install the containers docker-compose up Setup Non-Root User See the containers running docker-compose ps Take …">
+<meta name="twitter:description" content="These are some brief instructions for installing a local MySQL database, using Docker Compose, for local development. Install Containers Download the docker-compose.yml file wget &#39;https://gist.githubusercontent.com/jasonfigueroa/78db9eb5797b3351007b44fb18eae956/raw/871f6ee5354bfd61fcb53dace54a56c29b5f1a56/docker-compose.yml&#39; Install and run the containers docker-compose up -d Setup Non-Root User See the containers running …">
 
 <!-- Facebook Meta Data -->
 <meta property="og:title" content="Jason Figueroa ~ Local MySQL Database with Docker Compose" />
-<meta property="og:description" content="These are some brief instructions for installing a local MySQL database, using Docker Compose, for local development. Install Containers Download the docker-compose.yml file wget &#39;https://gist.githubusercontent.com/jasonfigueroa/78db9eb5797b3351007b44fb18eae956/raw/871f6ee5354bfd61fcb53dace54a56c29b5f1a56/docker-compose.yml&#39; Install the containers docker-compose up Setup Non-Root User See the containers running docker-compose ps Take …" />
+<meta property="og:description" content="These are some brief instructions for installing a local MySQL database, using Docker Compose, for local development. Install Containers Download the docker-compose.yml file wget &#39;https://gist.githubusercontent.com/jasonfigueroa/78db9eb5797b3351007b44fb18eae956/raw/871f6ee5354bfd61fcb53dace54a56c29b5f1a56/docker-compose.yml&#39; Install and run the containers docker-compose up -d Setup Non-Root User See the containers running …" />
 <meta property="og:image" content="" />
 </head>
 
@@ -97,8 +97,8 @@
 
 </li>
 <li>
-<p>Install the containers</p>
-<div class="highlight"><pre><span></span><code>docker-compose up
+<p>Install and run the containers</p>
+<div class="highlight"><pre><span></span><code>docker-compose up -d
 </code></pre></div>
 
 </li>
@@ -130,6 +130,12 @@
 <li>
 <p>Flush privileges</p>
 <div class="highlight"><pre><span></span><code>FLUSH PRIVILEGES;
+</code></pre></div>
+
+</li>
+<li>
+<p>Exit MySQL Client</p>
+<div class="highlight"><pre><span></span><code><span class="k">exit</span>
 </code></pre></div>
 
 </li>
