@@ -10,10 +10,9 @@ These are some brief instructions for installing a local MySQL database, using D
 
         wget 'https://gist.githubusercontent.com/jasonfigueroa/78db9eb5797b3351007b44fb18eae956/raw/871f6ee5354bfd61fcb53dace54a56c29b5f1a56/docker-compose.yml'
 
-2. Install the containers
+2. Install and run the containers
 
-        docker-compose up
-
+        docker-compose up -d
 
 ## Setup Non-Root User
 
@@ -34,16 +33,17 @@ These are some brief instructions for installing a local MySQL database, using D
 
         GRANT ALL PRIVILEGES ON *.* TO 'user'@'%' WITH GRANT OPTION;
 
-
 5. Flush privileges
 
         FLUSH PRIVILEGES;
 
+6. Exit MySQL Client
+
+        exit
 
 ## Download the Chinook MySQL Import File
 
 1. Download the MySQL Chinook database import file
-
 
         wget 'https://raw.githubusercontent.com/lerocha/chinook-database/master/ChinookDatabase/DataSources/Chinook_MySql_AutoIncrementPKs.sql'
 
@@ -73,4 +73,3 @@ These are some brief instructions for installing a local MySQL database, using D
 1. Destroy the Containers with
 
         docker-compose down -v
-
