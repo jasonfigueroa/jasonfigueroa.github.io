@@ -108,4 +108,8 @@
 &lt;/code&gt;&lt;/pre&gt;&lt;/div&gt;
 
 &lt;/li&gt;
-&lt;/ol&gt;</content><category term="docker"></category><category term="docker"></category><category term="mysql"></category></entry></feed>
+&lt;/ol&gt;
+&lt;hr&gt;
+&lt;p&gt;&lt;strong&gt;NOTE&lt;/strong&gt;&lt;/p&gt;
+&lt;p&gt;An ERD for the Chinook database can be found &lt;a href="https://github.com/lerocha/chinook-database/wiki/Chinook-Schema" target="_blank"&gt;here&lt;/a&gt;.&lt;/p&gt;
+&lt;hr&gt;</content><category term="docker"></category><category term="docker"></category><category term="mysql"></category></entry></feed>

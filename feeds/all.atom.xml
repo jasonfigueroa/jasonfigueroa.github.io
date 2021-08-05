@@ -1,5 +1,74 @@
 <?xml version="1.0" encoding="utf-8"?>
-<feed xmlns="http://www.w3.org/2005/Atom"><title>Jason Figueroa</title><link href="https://jasonfigueroa.github.io/" rel="alternate"></link><link href="https://jasonfigueroa.github.io/feeds/all.atom.xml" rel="self"></link><id>https://jasonfigueroa.github.io/</id><updated>2021-07-31T20:59:00-05:00</updated><entry><title>Local MySQL Database with Docker Compose</title><link href="https://jasonfigueroa.github.io/local-mysql-database-with-docker-compose.html" rel="alternate"></link><published>2021-07-31T20:59:00-05:00</published><updated>2021-07-31T20:59:00-05:00</updated><author><name>Jason Figueroa</name></author><id>tag:jasonfigueroa.github.io,2021-07-31:/local-mysql-database-with-docker-compose.html</id><summary type="html">&lt;p&gt;These are some brief instructions for installing a local MySQL database, using Docker Compose, for local development.&lt;/p&gt;
+<feed xmlns="http://www.w3.org/2005/Atom"><title>Jason Figueroa</title><link href="https://jasonfigueroa.github.io/" rel="alternate"></link><link href="https://jasonfigueroa.github.io/feeds/all.atom.xml" rel="self"></link><id>https://jasonfigueroa.github.io/</id><updated>2021-08-04T20:40:00-05:00</updated><entry><title>Entity Framework Core Scaffold a MySQL Database</title><link href="https://jasonfigueroa.github.io/entity-framework-core-scaffold-a-mysql-database.html" rel="alternate"></link><published>2021-08-04T20:40:00-05:00</published><updated>2021-08-04T20:40:00-05:00</updated><author><name>Jason Figueroa</name></author><id>tag:jasonfigueroa.github.io,2021-08-04:/entity-framework-core-scaffold-a-mysql-database.html</id><summary type="html">&lt;p&gt;These are some brief instructions for scaffolding a MySQL database with Entity Framework Core 3.1. A MySQL database is required. To get a MySQL database running for local development with Docker, refer to &lt;a href="https://jasonfigueroa.github.io/local-mysql-database-with-docker-compose.html" target="_blank"&gt;Local MySQL Database with Docker Compose&lt;/a&gt;.&lt;/p&gt;
+&lt;ol&gt;
+&lt;li&gt;
+&lt;p&gt;Create a .NET Core console app&lt;/p&gt;
+&lt;div class="highlight"&gt;&lt;pre&gt;&lt;span&gt;&lt;/span&gt;&lt;code&gt;dotnet new console -o …&lt;/code&gt;&lt;/pre&gt;&lt;/div&gt;&lt;/li&gt;&lt;/ol&gt;</summary><content type="html">&lt;p&gt;These are some brief instructions for scaffolding a MySQL database with Entity Framework Core 3.1. A MySQL database is required. To get a MySQL database running for local development with Docker, refer to &lt;a href="https://jasonfigueroa.github.io/local-mysql-database-with-docker-compose.html" target="_blank"&gt;Local MySQL Database with Docker Compose&lt;/a&gt;.&lt;/p&gt;
+&lt;ol&gt;
+&lt;li&gt;
+&lt;p&gt;Create a .NET Core console app&lt;/p&gt;
+&lt;div class="highlight"&gt;&lt;pre&gt;&lt;span&gt;&lt;/span&gt;&lt;code&gt;dotnet new console -o Chinook
+&lt;/code&gt;&lt;/pre&gt;&lt;/div&gt;
+
+&lt;/li&gt;
+&lt;li&gt;
+&lt;p&gt;cd into the project&lt;/p&gt;
+&lt;/li&gt;
+&lt;li&gt;
+&lt;p&gt;Add the following packages&lt;/p&gt;
+&lt;div class="highlight"&gt;&lt;pre&gt;&lt;span&gt;&lt;/span&gt;&lt;code&gt;dotnet add package Pomelo.EntityFrameworkCore.MySql --version 3.1.2
+dotnet add package Microsoft.EntityFrameworkCore.Design --version 3.1.4
+&lt;/code&gt;&lt;/pre&gt;&lt;/div&gt;
+
+&lt;/li&gt;
+&lt;li&gt;
+&lt;p&gt;Run the following, replace any values accordingly&lt;/p&gt;
+&lt;div class="highlight"&gt;&lt;pre&gt;&lt;span&gt;&lt;/span&gt;&lt;code&gt;dotnet ef dbcontext scaffold &amp;quot;Server=localhost;Database=Chinook;User=user;Password=userpass;Port=33060;TreatTinyAsBoolean=true;&amp;quot; &amp;quot;Pomelo.EntityFrameworkCore.MySql&amp;quot;
+&lt;/code&gt;&lt;/pre&gt;&lt;/div&gt;
+
+&lt;/li&gt;
+&lt;/ol&gt;
+&lt;hr&gt;
+&lt;p&gt;The following is a basic crud app.&lt;/p&gt;
+&lt;div class="highlight"&gt;&lt;pre&gt;&lt;span&gt;&lt;/span&gt;&lt;code&gt;&lt;span class="k"&gt;using&lt;/span&gt; &lt;span class="nn"&gt;System.Linq&lt;/span&gt;&lt;span class="p"&gt;;&lt;/span&gt;
+&lt;span class="k"&gt;using&lt;/span&gt; &lt;span class="nn"&gt;Microsoft.EntityFrameworkCore&lt;/span&gt;&lt;span class="p"&gt;;&lt;/span&gt;
+
+&lt;span class="k"&gt;namespace&lt;/span&gt; &lt;span class="nn"&gt;Chinook&lt;/span&gt;
+&lt;span class="p"&gt;{&lt;/span&gt;
+    &lt;span class="k"&gt;class&lt;/span&gt; &lt;span class="nc"&gt;Program&lt;/span&gt;
+    &lt;span class="p"&gt;{&lt;/span&gt;
+        &lt;span class="k"&gt;static&lt;/span&gt; &lt;span class="k"&gt;void&lt;/span&gt; &lt;span class="nf"&gt;Main&lt;/span&gt;&lt;span class="p"&gt;(&lt;/span&gt;&lt;span class="kt"&gt;string&lt;/span&gt;&lt;span class="p"&gt;[]&lt;/span&gt; &lt;span class="n"&gt;args&lt;/span&gt;&lt;span class="p"&gt;)&lt;/span&gt;
+        &lt;span class="p"&gt;{&lt;/span&gt;
+            &lt;span class="k"&gt;using&lt;/span&gt; &lt;span class="p"&gt;(&lt;/span&gt;&lt;span class="kt"&gt;var&lt;/span&gt; &lt;span class="n"&gt;db&lt;/span&gt; &lt;span class="p"&gt;=&lt;/span&gt; &lt;span class="k"&gt;new&lt;/span&gt; &lt;span class="n"&gt;ChinookContext&lt;/span&gt;&lt;span class="p"&gt;())&lt;/span&gt;
+            &lt;span class="p"&gt;{&lt;/span&gt;
+                &lt;span class="c1"&gt;// Create                &lt;/span&gt;
+                &lt;span class="kt"&gt;var&lt;/span&gt; &lt;span class="n"&gt;britneySpears&lt;/span&gt; &lt;span class="p"&gt;=&lt;/span&gt; &lt;span class="k"&gt;new&lt;/span&gt; &lt;span class="n"&gt;Artist&lt;/span&gt;&lt;span class="p"&gt;();&lt;/span&gt;
+                &lt;span class="n"&gt;britneySpears&lt;/span&gt;&lt;span class="p"&gt;.&lt;/span&gt;&lt;span class="n"&gt;Name&lt;/span&gt; &lt;span class="p"&gt;=&lt;/span&gt; &lt;span class="s"&gt;&amp;quot;Britney Spears&amp;quot;&lt;/span&gt;&lt;span class="p"&gt;;&lt;/span&gt;
+                &lt;span class="n"&gt;db&lt;/span&gt;&lt;span class="p"&gt;.&lt;/span&gt;&lt;span class="n"&gt;Artist&lt;/span&gt;&lt;span class="p"&gt;.&lt;/span&gt;&lt;span class="n"&gt;Add&lt;/span&gt;&lt;span class="p"&gt;(&lt;/span&gt;&lt;span class="n"&gt;britneySpears&lt;/span&gt;&lt;span class="p"&gt;);&lt;/span&gt;
+
+
+                &lt;span class="c1"&gt;// Read                &lt;/span&gt;
+                &lt;span class="kt"&gt;var&lt;/span&gt; &lt;span class="n"&gt;acdc&lt;/span&gt; &lt;span class="p"&gt;=&lt;/span&gt; &lt;span class="n"&gt;db&lt;/span&gt;&lt;span class="p"&gt;.&lt;/span&gt;&lt;span class="n"&gt;Artist&lt;/span&gt;
+                    &lt;span class="p"&gt;.&lt;/span&gt;&lt;span class="n"&gt;Include&lt;/span&gt;&lt;span class="p"&gt;(&lt;/span&gt;&lt;span class="n"&gt;a&lt;/span&gt; &lt;span class="p"&gt;=&amp;gt;&lt;/span&gt; &lt;span class="n"&gt;a&lt;/span&gt;&lt;span class="p"&gt;.&lt;/span&gt;&lt;span class="n"&gt;Album&lt;/span&gt;&lt;span class="p"&gt;)&lt;/span&gt; &lt;span class="c1"&gt;// Eager loading, exclude this for lazy loading&lt;/span&gt;
+                    &lt;span class="p"&gt;.&lt;/span&gt;&lt;span class="n"&gt;Where&lt;/span&gt;&lt;span class="p"&gt;(&lt;/span&gt;&lt;span class="n"&gt;a&lt;/span&gt; &lt;span class="p"&gt;=&amp;gt;&lt;/span&gt; &lt;span class="n"&gt;a&lt;/span&gt;&lt;span class="p"&gt;.&lt;/span&gt;&lt;span class="n"&gt;Name&lt;/span&gt; &lt;span class="p"&gt;==&lt;/span&gt; &lt;span class="s"&gt;&amp;quot;AC/DC&amp;quot;&lt;/span&gt;&lt;span class="p"&gt;)&lt;/span&gt;
+                    &lt;span class="p"&gt;.&lt;/span&gt;&lt;span class="n"&gt;FirstOrDefault&lt;/span&gt;&lt;span class="p"&gt;();&lt;/span&gt;
+
+                &lt;span class="c1"&gt;// Update                &lt;/span&gt;
+                &lt;span class="kt"&gt;var&lt;/span&gt; &lt;span class="n"&gt;forThoseAboutToRock&lt;/span&gt; &lt;span class="p"&gt;=&lt;/span&gt; &lt;span class="n"&gt;db&lt;/span&gt;&lt;span class="p"&gt;.&lt;/span&gt;&lt;span class="n"&gt;Album&lt;/span&gt;
+                    &lt;span class="p"&gt;.&lt;/span&gt;&lt;span class="n"&gt;Where&lt;/span&gt;&lt;span class="p"&gt;(&lt;/span&gt;&lt;span class="n"&gt;a&lt;/span&gt; &lt;span class="p"&gt;=&amp;gt;&lt;/span&gt; &lt;span class="n"&gt;a&lt;/span&gt;&lt;span class="p"&gt;.&lt;/span&gt;&lt;span class="n"&gt;ArtistId&lt;/span&gt; &lt;span class="p"&gt;==&lt;/span&gt; &lt;span class="n"&gt;acdc&lt;/span&gt;&lt;span class="p"&gt;.&lt;/span&gt;&lt;span class="n"&gt;ArtistId&lt;/span&gt; &lt;span class="p"&gt;&amp;amp;&amp;amp;&lt;/span&gt; &lt;span class="n"&gt;a&lt;/span&gt;&lt;span class="p"&gt;.&lt;/span&gt;&lt;span class="n"&gt;Title&lt;/span&gt; &lt;span class="p"&gt;==&lt;/span&gt; &lt;span class="s"&gt;&amp;quot;For Those About To Rock We Salute You&amp;quot;&lt;/span&gt;&lt;span class="p"&gt;)&lt;/span&gt;
+                    &lt;span class="p"&gt;.&lt;/span&gt;&lt;span class="n"&gt;FirstOrDefault&lt;/span&gt;&lt;span class="p"&gt;();&lt;/span&gt;
+
+                &lt;span class="n"&gt;forThoseAboutToRock&lt;/span&gt;&lt;span class="p"&gt;.&lt;/span&gt;&lt;span class="n"&gt;Title&lt;/span&gt; &lt;span class="p"&gt;=&lt;/span&gt; &lt;span class="s"&gt;&amp;quot;Title Changed!&amp;quot;&lt;/span&gt;&lt;span class="p"&gt;;&lt;/span&gt;
+
+                &lt;span class="c1"&gt;// Delete                &lt;/span&gt;
+                &lt;span class="n"&gt;db&lt;/span&gt;&lt;span class="p"&gt;.&lt;/span&gt;&lt;span class="n"&gt;Remove&lt;/span&gt;&lt;span class="p"&gt;(&lt;/span&gt;&lt;span class="n"&gt;britneySpears&lt;/span&gt;&lt;span class="p"&gt;);&lt;/span&gt;
+
+                &lt;span class="n"&gt;db&lt;/span&gt;&lt;span class="p"&gt;.&lt;/span&gt;&lt;span class="n"&gt;SaveChanges&lt;/span&gt;&lt;span class="p"&gt;();&lt;/span&gt;
+            &lt;span class="p"&gt;}&lt;/span&gt;
+        &lt;span class="p"&gt;}&lt;/span&gt;
+    &lt;span class="p"&gt;}&lt;/span&gt;
+&lt;span class="p"&gt;}&lt;/span&gt;
+&lt;/code&gt;&lt;/pre&gt;&lt;/div&gt;</content><category term="dotnet"></category><category term="entity framework core"></category><category term="dotnet"></category><category term="mysql"></category></entry><entry><title>Local MySQL Database with Docker Compose</title><link href="https://jasonfigueroa.github.io/local-mysql-database-with-docker-compose.html" rel="alternate"></link><published>2021-07-31T20:59:00-05:00</published><updated>2021-07-31T20:59:00-05:00</updated><author><name>Jason Figueroa</name></author><id>tag:jasonfigueroa.github.io,2021-07-31:/local-mysql-database-with-docker-compose.html</id><summary type="html">&lt;p&gt;These are some brief instructions for installing a local MySQL database, using Docker Compose, for local development.&lt;/p&gt;
 &lt;h2&gt;Install Containers&lt;/h2&gt;
 &lt;ol&gt;
 &lt;li&gt;
@@ -108,7 +177,11 @@
 &lt;/code&gt;&lt;/pre&gt;&lt;/div&gt;
 
 &lt;/li&gt;
-&lt;/ol&gt;</content><category term="docker"></category><category term="docker"></category><category term="mysql"></category></entry><entry><title>Install a Vagrant Box with MySQL</title><link href="https://jasonfigueroa.github.io/install-a-vagrant-box-with-mysql.html" rel="alternate"></link><published>2021-07-25T19:05:00-05:00</published><updated>2021-07-25T19:05:00-05:00</updated><author><name>Jason Figueroa</name></author><id>tag:jasonfigueroa.github.io,2021-07-25:/install-a-vagrant-box-with-mysql.html</id><content type="html">&lt;p&gt;I created a repo with a bash script and Vagrantfile for quickly spinning up a MySQL database, accessible from the host machine. I will be using this kind of setup for tinkering with Entity Framework Core and MySQL.&lt;/p&gt;
+&lt;/ol&gt;
+&lt;hr&gt;
+&lt;p&gt;&lt;strong&gt;NOTE&lt;/strong&gt;&lt;/p&gt;
+&lt;p&gt;An ERD for the Chinook database can be found &lt;a href="https://github.com/lerocha/chinook-database/wiki/Chinook-Schema" target="_blank"&gt;here&lt;/a&gt;.&lt;/p&gt;
+&lt;hr&gt;</content><category term="docker"></category><category term="docker"></category><category term="mysql"></category></entry><entry><title>Install a Vagrant Box with MySQL</title><link href="https://jasonfigueroa.github.io/install-a-vagrant-box-with-mysql.html" rel="alternate"></link><published>2021-07-25T19:05:00-05:00</published><updated>2021-07-25T19:05:00-05:00</updated><author><name>Jason Figueroa</name></author><id>tag:jasonfigueroa.github.io,2021-07-25:/install-a-vagrant-box-with-mysql.html</id><content type="html">&lt;p&gt;I created a repo with a bash script and Vagrantfile for quickly spinning up a MySQL database, accessible from the host machine. I will be using this kind of setup for tinkering with Entity Framework Core and MySQL.&lt;/p&gt;
 &lt;p&gt;The repo and basic instructions can be found &lt;a href="https://github.com/jasonfigueroa/vagrant-mysql" target="_blank"&gt;here&lt;/a&gt;.&lt;/p&gt;</content><category term="vagrant"></category><category term="vagrant"></category><category term="mysql"></category></entry><entry><title>Pelican Python3 Makefile error</title><link href="https://jasonfigueroa.github.io/pelican-python3-makefile-error.html" rel="alternate"></link><published>2017-08-01T08:43:00-05:00</published><updated>2017-08-01T08:43:00-05:00</updated><author><name>Jason Figueroa</name></author><id>tag:jasonfigueroa.github.io,2017-08-01:/pelican-python3-makefile-error.html</id><summary type="html">&lt;p&gt;Full error:&lt;/p&gt;
 &lt;div class="highlight"&gt;&lt;pre&gt;&lt;span&gt;&lt;/span&gt;&lt;code&gt;$ &lt;span class="nb"&gt;cd&lt;/span&gt; /home/&amp;lt;user&amp;gt;/path_to_project_root/output &lt;span class="o"&gt;&amp;amp;&amp;amp;&lt;/span&gt; python3 -m pelican.server
 $ /usr/bin/python3: Error &lt;span class="k"&gt;while&lt;/span&gt; finding spec &lt;span class="k"&gt;for&lt;/span&gt; &lt;span class="s1"&gt;&amp;#39;pelican.server&amp;#39;&lt;/span&gt; &lt;span class="o"&gt;(&lt;/span&gt;ImportError: No module named &lt;span class="s1"&gt;&amp;#39;pelican&amp;#39;&lt;/span&gt;&lt;span class="o"&gt;)&lt;/span&gt;
