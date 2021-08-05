@@ -73,3 +73,10 @@ These are some brief instructions for installing a local MySQL database, using D
 1. Destroy the Containers with
 
         docker-compose down -v
+
+---
+**NOTE**
+
+An ERD for the Chinook database can be found <a href="https://github.com/lerocha/chinook-database/wiki/Chinook-Schema" target="_blank">here</a>.
+
+---
