@@ -1,0 +1,26 @@
+---
+layout: base.njk
+description: "Jason Figueroa is a software engineer working in C# and .NET, with experience in enterprise applications, production troubleshooting, and modernization."
+---
+<section class="intro">
+  <p class="eyebrow">Software engineering · .NET</p>
+  <h1>Useful software.<br>Carefully built.</h1>
+  <p class="lead">I’m Jason, a software engineer working in C# and .NET. I untangle complex applications, troubleshoot production problems, and help existing systems evolve.</p>
+  <p class="muted">This is where I keep notes on the things I build, maintain, and figure out along the way.</p>
+  <a href="/about/">More about my work →</a>
+</section>
+<section class="ruled-section" aria-labelledby="writing-heading">
+  <h2 class="eyebrow" id="writing-heading">From the notebook</h2>
+  {% for article in collections.articles %}{% if loop.first %}
+  <article class="article-listing">
+    <h3><a href="{{ article.url }}">{{ article.data.title }}</a></h3>
+    <p class="muted">{{ article.data.description }}</p>
+    <p class="article-meta">{{ article.data.category }} · <time datetime="{{ article.date | isoDate }}">{{ article.date | readableDate }}</time></p>
+  </article>
+  {% endif %}{% endfor %}
+</section>
+<section class="ruled-section" aria-labelledby="approach-heading">
+  <h2 id="approach-heading">How I approach the work</h2>
+  <p>I’m comfortable starting with an unfamiliar codebase and incomplete documentation. I follow the behavior through the system, work out what needs to change, and see the fix through.</p>
+  <ul class="focus-list"><li>Understand the existing system</li><li>Make focused changes</li><li>Verify the result</li></ul>
+</section>

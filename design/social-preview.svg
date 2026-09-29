@@ -1,0 +1,9 @@
+<svg xmlns="http://www.w3.org/2000/svg" width="1200" height="630" viewBox="0 0 1200 630">
+  <rect width="1200" height="630" fill="#fbfaf7"/>
+  <text x="94" y="100" font-family="DejaVu Sans,sans-serif" font-size="27" fill="#272d2c">Jason Figueroa</text>
+  <path d="M94 143H1106" stroke="#d7dbd5"/>
+  <text x="94" y="219" font-family="DejaVu Sans Mono,monospace" font-size="20" letter-spacing="2" fill="#606963">SOFTWARE ENGINEERING · .NET</text>
+  <text x="91" y="330" font-family="DejaVu Serif,serif" font-size="75" fill="#272d2c">Useful software.</text>
+  <text x="91" y="427" font-family="DejaVu Serif,serif" font-size="75" fill="#272d2c">Carefully built.</text>
+  <text x="94" y="547" font-family="DejaVu Sans,sans-serif" font-size="24" fill="#285c4b">jasonfigueroa.com</text>
+</svg>
