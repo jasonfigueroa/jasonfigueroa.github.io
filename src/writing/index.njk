@@ -1,0 +1,16 @@
+---
+layout: base.njk
+title: "Writing"
+description: "Practical notes by Jason Figueroa on software engineering, Linux, and developer tools, with reproducible steps and explanations."
+section: writing
+---
+<p class="eyebrow">Writing</p>
+<h1>Notes from the work.</h1>
+<p class="lead">Practical write-ups, with enough detail to follow the reasoning and reproduce the result.</p>
+{% for article in collections.articles %}
+<article class="ruled-section article-listing">
+  <p class="article-meta">{{ article.data.category }} · <time datetime="{{ article.date | isoDate }}">{{ article.date | readableDate }}</time></p>
+  <h2><a href="{{ article.url }}">{{ article.data.title }}</a></h2>
+  <p class="muted">{{ article.data.description }}</p>
+</article>
+{% endfor %}

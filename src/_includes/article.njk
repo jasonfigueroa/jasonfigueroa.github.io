@@ -1,0 +1,22 @@
+---
+layout: base.njk
+section: writing
+---
+<article class="article">
+  <header class="article-header">
+    <a class="back-link" href="/writing/">← All writing</a>
+    <p class="eyebrow">{{ category }}</p>
+    <h1>{{ title }}</h1>
+    <p class="lead">{{ description }}</p>
+    <p class="article-meta"><a href="/about/">Jason Figueroa</a> · <time datetime="{{ date | isoDate }}">{{ date | readableDate }}</time>{% if updated %} · Updated <time datetime="{{ updated | isoDate }}">{{ updated | readableDate }}</time>{% endif %}</p>
+  </header>
+  {% set headings = content | toc %}
+  {% if headings.length %}
+  <details class="toc">
+    <summary>On this page</summary>
+    <nav aria-label="Table of contents"><ol>{% for heading in headings %}<li><a href="#{{ heading.id }}">{{ heading.text }}</a></li>{% endfor %}</ol></nav>
+  </details>
+  {% endif %}
+  <div class="prose">{{ content | safe }}</div>
+  <footer class="article-footer"><a href="/writing/">← All writing</a><a href="#main">Back to top ↑</a></footer>
+</article>

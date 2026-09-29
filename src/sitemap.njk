@@ -1,0 +1,11 @@
+---
+permalink: /sitemap.xml
+eleventyExcludeFromCollections: true
+---
+<?xml version="1.0" encoding="utf-8"?>
+<urlset xmlns="http://www.sitemaps.org/schemas/sitemap/0.9">
+  <url><loc>{{ site.url }}/</loc></url>
+  <url><loc>{{ site.url }}/about/</loc></url>
+  <url><loc>{{ site.url }}/writing/</loc></url>
+  {% for article in collections.articles %}<url><loc>{{ article.url | absoluteUrl(site.url) }}</loc><lastmod>{{ (article.data.updated or article.date) | isoDate }}</lastmod></url>{% endfor %}
+</urlset>

@@ -1,0 +1,24 @@
+---
+permalink: /feed.xml
+eleventyExcludeFromCollections: true
+---
+<?xml version="1.0" encoding="utf-8"?>
+<feed xmlns="http://www.w3.org/2005/Atom" xml:lang="en-US">
+  <title>Jason Figueroa — Writing</title>
+  <subtitle>Notes on software, Linux, and developer tools.</subtitle>
+  <link href="{{ site.url }}/feed.xml" rel="self"/>
+  <link href="{{ site.url }}/writing/"/>
+  <id>{{ site.url }}/writing/</id>
+  {% if collections.articles.length %}<updated>{{ (collections.articles[0].data.updated or collections.articles[0].date) | isoDate }}</updated>{% endif %}
+  <author><name>{{ site.name }}</name><uri>{{ site.url }}/about/</uri></author>
+  {% for article in collections.articles %}
+  <entry>
+    <title>{{ article.data.title }}</title>
+    <link href="{{ article.url | absoluteUrl(site.url) }}"/>
+    <id>{{ article.url | absoluteUrl(site.url) }}</id>
+    <published>{{ article.date | isoDate }}</published>
+    <updated>{{ (article.data.updated or article.date) | isoDate }}</updated>
+    <summary>{{ article.data.description }}</summary>
+  </entry>
+  {% endfor %}
+</feed>

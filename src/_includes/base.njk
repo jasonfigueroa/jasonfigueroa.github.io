@@ -1,0 +1,49 @@
+<!doctype html>
+<html lang="en">
+<head>
+  <meta charset="utf-8">
+  <meta name="viewport" content="width=device-width, initial-scale=1">
+  <meta name="color-scheme" content="light dark">
+  <title>{{ pageTitle }}</title>
+  <meta name="description" content="{{ description or site.description }}">
+  {% if noindex %}<meta name="robots" content="noindex, follow">{% endif %}
+  <link rel="canonical" href="{{ canonical }}">
+  <link rel="icon" href="/assets/favicon.svg" type="image/svg+xml">
+  <link rel="stylesheet" href="/assets/site.css">
+  <link rel="alternate" type="application/atom+xml" title="Jason Figueroa — Writing" href="/feed.xml">
+  <meta property="og:site_name" content="{{ site.name }}">
+  <meta property="og:type" content="{% if layout == 'article.njk' %}article{% else %}website{% endif %}">
+  <meta property="og:locale" content="en_US">
+  <meta property="og:title" content="{{ pageTitle }}">
+  <meta property="og:description" content="{{ description or site.description }}">
+  <meta property="og:url" content="{{ canonical }}">
+  <meta property="og:image" content="{{ site.image | absoluteUrl(site.url) }}">
+  <meta property="og:image:width" content="1200">
+  <meta property="og:image:height" content="630">
+  <meta property="og:image:alt" content="Jason Figueroa. Software engineering, .NET. Useful software. Carefully built.">
+  <meta name="twitter:card" content="summary_large_image">
+  {% if not noindex %}<script type="application/ld+json">{{ schema | json | safe }}</script>{% endif %}
+</head>
+<body>
+  <a class="skip-link" href="#main">Skip to content</a>
+  <div class="site-shell">
+    <header class="site-header">
+      <a class="brand" href="/">Jason Figueroa</a>
+      <nav aria-label="Main navigation">
+        <a href="/"{% if page.url == '/' %} aria-current="page"{% endif %}>Home</a>
+        <a href="/about/"{% if page.url == '/about/' %} aria-current="page"{% endif %}>About</a>
+        <a href="/writing/"{% if section == 'writing' %} aria-current="{% if page.url == '/writing/' %}page{% else %}true{% endif %}"{% endif %}>Writing</a>
+      </nav>
+    </header>
+    <main id="main" tabindex="-1">{{ content | safe }}</main>
+    <footer class="site-footer">
+      <span>Jason Figueroa</span>
+      <nav aria-label="Elsewhere">
+        <a href="{{ site.github }}" rel="me">GitHub</a>
+        <a href="{{ site.linkedin }}" rel="me">LinkedIn</a>
+        <a href="/feed.xml">RSS</a>
+      </nav>
+    </footer>
+  </div>
+</body>
+</html>
